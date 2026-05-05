@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium TypeTester</title>
+    <meta name="description" content="A beautiful, premium typing speed test application.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated background elements -->
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+    
+    <!-- Main glassmorphism container -->
+    <main class="glass-container">
+        <header>
+            <h1>TypeTester</h1>
+            <p>Test your typing speed and accuracy</p>
+        </header>
+
+        <!-- Real-time statistics -->
+        <div class="stats-panel">
+            <div class="stat-box">
+                <span class="stat-label">Time</span>
+                <span class="stat-value" id="time">0s</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">WPM</span>
+                <span class="stat-value" id="wpm">0</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Accuracy</span>
+                <span class="stat-value" id="accuracy">100%</span>
+            </div>
+        </div>
+
+        <!-- Interactive typing area -->
+        <div class="typing-area" id="typing-area">
+            <!-- Text to type is rendered here -->
+            <div id="text-display" class="text-display"></div>
+            <!-- Invisible input layered over the display for capturing keystrokes -->
+            <textarea id="text-input" class="text-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="restart-btn" class="btn primary-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                Restart Test
+            </button>
+        </div>
+
+        <!-- Results Overlay Modal -->
+        <div id="results-modal" class="modal hidden">
+            <div class="modal-content glass-panel">
+                <h2>Test Complete! 🎉</h2>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-label">Speed</span>
+                        <span class="result-value"><span id="final-wpm">0</span> WPM</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Accuracy</span>
+                        <span class="result-value"><span id="final-accuracy">0</span>%</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Time</span>
+                        <span class="result-value"><span id="final-time">0</span>s</span>
+                    </div>
+                </div>
+                <button id="modal-restart-btn" class="btn primary-btn w-full">Play Again</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Application Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
